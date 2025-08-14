@@ -76,7 +76,7 @@ async def eora(msg, state: FSMContext):
     try:
         response = client_bot_hub.chat.completions.create(
             messages=messages,
-            model='deepseek-chat-v3-0324', # gpt-5-nano , deepseek-chat-v3-0324
+            model='deepseek-chat-v3-0324'
         )
         bot_reply = response.choices[0].message.content
         bot_reply = re.sub(r'[*#_~`]', '', bot_reply)
@@ -98,3 +98,4 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
+
